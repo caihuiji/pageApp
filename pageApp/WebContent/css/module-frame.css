@@ -1,0 +1,35 @@
+@CHARSET "UTF-8";
+
+/**
+ *--------------------------------------
+ * Apusic (Kingdee Middleware)
+ *---------------------------------------
+ * Copyright By Apusic ,All right Reserved
+ * author   date   comment
+ * caihuiji  2012-10-30  Created
+ *
+ * overview:
+ * define the main style ;
+ */
+ 
+.wrapper {
+	width:700px;
+	margin:0 auto;
+}
+
+#header {
+	height:150px;
+}
+
+#main .content-wrapper{
+	position: relative;
+}
+
+#main .operator-wrapper{
+	position: absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	width:300px;
+	
+}

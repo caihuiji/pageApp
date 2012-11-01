@@ -33,7 +33,7 @@
 /* toggle */
 #main .toggle-all {
 	position: absolute;
-	top: -32px;
+	top: 15px;
 }
 
 #main .toggle,#main .toggle-all {
