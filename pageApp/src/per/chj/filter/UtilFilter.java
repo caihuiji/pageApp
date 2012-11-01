@@ -19,20 +19,25 @@ public class UtilFilter implements Filter {
 	}
 
 	@Override
+	public void init(FilterConfig arg0) throws ServletException {
+
+	}
+
+	@Override
 	public void doFilter(ServletRequest request, ServletResponse response,
 			FilterChain chain) throws IOException, ServletException {
 		HttpServletRequest hsr = (HttpServletRequest) request;
+		hsr.setAttribute("BASE_URL", getBasePath(hsr));
+		hsr.setAttribute("CONTEXT_PATH", hsr.getContextPath());
+		chain.doFilter(request, response);
+	}
+
+	private String getBasePath(HttpServletRequest hsr) {
 		StringBuffer sb = new StringBuffer(50);
 		sb.append(hsr.getScheme()).append("://").append(hsr.getServerName())
 				.append(":").append(hsr.getServerPort())
 				.append(hsr.getContextPath());
-		hsr.setAttribute("BASE_URL", sb.toString());
-		chain.doFilter(request, response);
-	}
-
-	@Override
-	public void init(FilterConfig arg0) throws ServletException {
-
+		return sb.toString();
 	}
 
 }
