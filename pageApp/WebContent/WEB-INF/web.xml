@@ -3,6 +3,17 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
  http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+ 
+ 
+ 	<filter>
+		<filter-name>util</filter-name>
+		<filter-class>per.chj.filter.UtilFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>util</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
 
 	<filter>
 		<filter-name>struts2</filter-name>

@@ -3,18 +3,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="css/module-base.css" />
-<link rel="stylesheet" href="css/module-frame.css" />
-<link rel="stylesheet" href="css/module-main.css" />
+<link rel="stylesheet" href="${BASE_URL}/css/module-base.css" />
+<link rel="stylesheet" href="${BASE_URL}/css/module-frame.css" />
+<link rel="stylesheet" href="${BASE_URL}/css/module-main.css" />
 <title></title>
 </head>
 <body>
-	<div class="wrapper">
 		<%-- header --%>
-		<div id="header"></div>
+		<div id="header" >
+			<div class="user-info">welcome! ${id}</div>
+		</div>
 
 		<%-- main --%>
-		<div id="main">
+		<div id="main" class="wrapper">
 			<!-- <div class="header"></div> -->
 			<div class="content-wrapper">
 				<div class="input-wrapper">
@@ -44,6 +45,5 @@
 		</div>
 		<%-- footer 
 	<div id="footer"></div>--%>
-	</div>
 </body>
 </html>
