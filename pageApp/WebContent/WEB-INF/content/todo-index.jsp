@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="s" uri="/struts-tags" %>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -22,10 +23,11 @@
 					<input class="new-todo" type="text" name="newTodo"  value="fuck you everyday?!" />
 				</div>
 				<div class="todo-wrapper">
-					<div class="toggle-all">3</div>
+					<div class="toggle-all">!</div>
 					<ul class="clear-li-style todo-list">
-						<li><span class="toggle">1</span><label>asdfasdf</label></li>
-						<li><span class="toggle">2</span><label>asdfasdf</label></li>
+						<s:iterator value="tasks" status="status" var="var">
+						<li><span class="toggle">${status.count}</span><label>${content}</label></li>
+						</s:iterator>
 					</ul>
 				</div>
 			</div>
