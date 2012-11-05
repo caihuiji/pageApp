@@ -47,5 +47,9 @@
 		</div>
 		<%-- footer 
 	<div id="footer"></div>--%>
+	<script type="text/javascript" src="${BASE_URL}/lib/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="${BASE_URL}/lib/coconut.define.js"></script>
+	<script type="text/javascript" src="${BASE_URL}/lib/coconut.override.js"></script>
+	<script type="text/javascript" src="${BASE_URL}/js/model/task.js"></script>
 </body>
 </html>

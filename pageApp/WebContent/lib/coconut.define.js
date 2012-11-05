@@ -1,18 +1,16 @@
 
 /**
- * aps moduel 定义组件
+ * namespace 定义组件
  * @name - module
  * @author caihuiji
- * @param namespace - 报名
- * @param classname - 类名
- * @param clazz - 类 
+ * @param namespace - 全路径
+ * @param clazz - 类 (function)  
  */
 
-window.aps = window.aps || {};
-aps.module = aps.module || {};
+window.coconut = window.coconut || {};
 var NAMESPACE_SEPARTOR = '.';
 
-aps.module.defined = function (namespace,clazz){
+coconut.define = function (namespace,clazz){
 	if(typeof(namespace) != 'string'  ){
 		throw new Error ('namespace must be string');
 	}
@@ -37,10 +35,6 @@ aps.module.defined = function (namespace,clazz){
 		return (currrentNamespace[namespaces[namespaces.length-1]] = clazz);
 	};
 	
-	
-	/*var _oNameSpace = generateNamespace(namespace);
-	var _oClazz = attachClass(_oNameSpace, className, clazz);
-	_oClazz.call(_oNameSpace);*/
 	return generateNamespace(namespace, clazz);
 	
 };

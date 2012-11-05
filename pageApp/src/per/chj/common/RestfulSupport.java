@@ -24,13 +24,13 @@ public class RestfulSupport extends ActionSupport {
 		return ServletActionContext.getResponse();
 	}
 
-	public void write(String status, Object obj) throws IllegalArgumentException {
+	public void write(Boolean status, Object obj) throws IllegalArgumentException {
 		PrintWriter pw;
 		try {
 
 			Map<String, Object> map = new HashMap<String, Object>();
 			if (status != null) {
-				map.put("status", status);
+				map.put("success", true);
 			}
 
 			if (obj != null) {
@@ -44,8 +44,8 @@ public class RestfulSupport extends ActionSupport {
 		}
 	}
 
-	public void writeStatus(Object obj) {
-		write("success", null);
+	public void writeStatus(boolean status) {
+		write(status, null);
 	}
 
 	public void writeContent(Object obj) {

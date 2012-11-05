@@ -51,13 +51,13 @@ public class TodoAction extends RestfulSupport {
 	public void create (){
 		try {
 			todoService.addTask(task);
-			this.writeStatus("success");
+			this.writeStatus(true);
 		} catch (TaskAlreayExistedException e) {
 			e.printStackTrace();
-			this.write("error","task has alreay existed");
+			this.write(false,"task has alreay existed");
 		} catch (TodoServiceException e) {
 			e.printStackTrace();
-			this.write("error","can not be add!");
+			this.write(false,"can not be add!");
 		}
 	}
 	
@@ -65,13 +65,13 @@ public class TodoAction extends RestfulSupport {
 	public void update (){
 		try {
 			todoService.updateTask(task);
-			this.writeStatus("success");
+			this.writeStatus(true);
 		} catch (CannotFoundTaskException e) {
 			e.printStackTrace();
-			this.write("error","can not found task!");
+			this.write(false,"can not found task!");
 		} catch (TodoServiceException e) {
 			e.printStackTrace();
-			this.write("error","can not be update!");
+			this.write(false,"can not be update!");
 		}
 	}
 	
@@ -79,13 +79,13 @@ public class TodoAction extends RestfulSupport {
 	public void destory (){
 		try {
 			todoService.removeTask(id);
-			this.writeStatus("success");
+			this.writeStatus(true);
 		} catch (CannotFoundTaskException e) {
 			e.printStackTrace();
-			this.write("error","can not found task!");
+			this.write(false,"can not found task!");
 		} catch (TodoServiceException e) {
 			e.printStackTrace();
-			this.write("error","can not be remove!");
+			this.write(false,"can not be remove!");
 		}
 	}
 	
