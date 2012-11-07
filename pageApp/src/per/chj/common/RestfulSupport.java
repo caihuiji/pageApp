@@ -30,16 +30,22 @@ public class RestfulSupport extends ActionSupport {
 			HttpServletResponse hsr = getResponse();
 			hsr.setContentType("text/html");
 			hsr.setCharacterEncoding("UTF-8");
+			pw = this.getResponse().getWriter();
 			Map<String, Object> map = new HashMap<String, Object>();
+			
+			if (obj != null) {
+				if(status == null){
+					pw.write(JsonUtil.toJson(obj));
+					return ;
+				}
+				map.put("content", obj);
+			}
+			
 			if (status != null) {
 				map.put("success", true);
 			}
 
-			if (obj != null) {
-				map.put("content", obj);
-			}
 
-			pw = this.getResponse().getWriter();
 			pw.write(JsonUtil.toJson(map));
 		} catch (IOException e) {
 			throw new IllegalArgumentException(e);

@@ -41,11 +41,16 @@ public class TodoAction extends RestfulSupport {
 	private List<Task> tasks;
 	
 	
-	//index
 	public String index (){
-		tasks = todoService.findTasks();
 		return INDEX;
 	}
+	
+	public void list (){
+		tasks = todoService.findTasks();
+		this.writeContent(tasks);
+	}
+	
+	
 	
 	//create
 	public void create (){

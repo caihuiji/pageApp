@@ -25,9 +25,9 @@
 				<div class="todo-wrapper">
 					<div class="toggle-all">!</div>
 					<ul class="clear-li-style todo-list">
-						<s:iterator value="tasks" status="status" var="var">
+						<%-- <s:iterator value="tasks" status="status" var="var">
 						<li><span class="toggle">${status.count}</span><label>${content}</label></li>
-						</s:iterator>
+						</s:iterator> --%>
 					</ul>
 				</div>
 			</div>
@@ -49,7 +49,18 @@
 	<div id="footer"></div>--%>
 	<script type="text/javascript" src="${BASE_URL}/lib/jquery-1.7.2.min.js"></script>
 	<script type="text/javascript" src="${BASE_URL}/lib/coconut.define.js"></script>
+	<script type="text/javascript" src="${BASE_URL}/lib/coconut.formatter.js"></script>
 	<script type="text/javascript" src="${BASE_URL}/lib/coconut.override.js"></script>
-	<script type="text/javascript" src="${BASE_URL}/js/model/task.js"></script>
+	<script type="text/javascript" src="${BASE_URL}/js/model/task-model.js"></script>
+	<script type="text/javascript" src="${BASE_URL}/js/view/task-view.js"></script>
+	
+	<script type="text/javascript" >
+		var taskView =  new pageApp.task.TaskView({
+			container : '#main .todo-wrapper .todo-list',
+			model : pageApp.task.TaskModel,
+			url:'${BASE_URL}/todo!list'
+			
+		});
+	</script>
 </body>
 </html>

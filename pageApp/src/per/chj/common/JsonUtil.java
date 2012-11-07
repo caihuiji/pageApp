@@ -2,11 +2,18 @@ package per.chj.common;
 
 import net.sf.json.JSONObject;
 
+import org.codehaus.jackson.map.ObjectMapper;
+
 public class JsonUtil {
 	
 	
 	public static  String toJson (Object obj){
-		return JSONObject.fromObject(obj).toString();
+		ObjectMapper om = new ObjectMapper();
+			try {
+				return om.writeValueAsString(obj);
+			} catch (Exception e){
+				throw new IllegalArgumentException("can not generate json ",e);
+			}
 	}
 	
 	@SuppressWarnings("unchecked")
