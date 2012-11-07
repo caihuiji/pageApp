@@ -27,7 +27,9 @@ public class RestfulSupport extends ActionSupport {
 	public void write(Boolean status, Object obj) throws IllegalArgumentException {
 		PrintWriter pw;
 		try {
-
+			HttpServletResponse hsr = getResponse();
+			hsr.setContentType("text/html");
+			hsr.setCharacterEncoding("UTF-8");
 			Map<String, Object> map = new HashMap<String, Object>();
 			if (status != null) {
 				map.put("success", true);
@@ -38,7 +40,7 @@ public class RestfulSupport extends ActionSupport {
 			}
 
 			pw = this.getResponse().getWriter();
-			pw.write(JsonUtil.toJson(obj));
+			pw.write(JsonUtil.toJson(map));
 		} catch (IOException e) {
 			throw new IllegalArgumentException(e);
 		}

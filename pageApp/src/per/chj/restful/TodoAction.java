@@ -51,7 +51,6 @@ public class TodoAction extends RestfulSupport {
 	public void create (){
 		try {
 			todoService.addTask(task);
-			this.writeStatus(true);
 		} catch (TaskAlreayExistedException e) {
 			e.printStackTrace();
 			this.write(false,"task has alreay existed");
