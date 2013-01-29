@@ -57,10 +57,11 @@
 	<script type="text/javascript" >
 		var taskView =  new pageApp.task.TaskView({
 			container : '#main .todo-wrapper .todo-list',
-			model : pageApp.task.TaskModel,
+			model : new pageApp.task.TaskModel(),
 			url:'${BASE_URL}/todo!list'
 			
 		});
+		
 	</script>
 </body>
 </html>

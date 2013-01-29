@@ -1,42 +1,46 @@
 /**
  * 
- * task 
+ * task
  * 
  */
 
 ;
-coconut.define('pageApp.task.TaskModel', function(settings) {
+$(function() {
 
-	var override = {
-		id : undefined,
-		time : undefined,
-		content : undefined,
-		isCompleted : undefined
-	};
-	override = (this, coconut.override(override, settings));
-	var _self = this;
-	
-	
+	C.define('pageApp.task.TaskModel', function(settings) {
 
-	this.getter = function(name) {
-		if (override[name] == null || typeof(override[name]) == 'function' ) {
-			throw new Error('can not found property ' + name);
-		}
-		return override[name];
-	};
+		return function(settings ,$, C) {
 
-	this.setter = function(name, val) {
-		if (override[name] == null || typeof(override[name]) == 'function' ) {
-			throw new Error('can not found property ' + name);
-		}
-		override[name] = val;
-	};
+			var _attr = {
+				id : undefined,
+				time : undefined,
+				content : undefined,
+				isCompleted : undefined
+			};
+			_s = $.extend(_s, settings);
 
-	var _init = function() {
-	};
-	
-	_init();
+			var _self = this,
+				_event = new C.event();
 
-	return this;
+			// constructor
+			(function() {
 
+			}());
+
+			return {
+				attr : function(key, value) {
+					if (typeof key !== 'string' && arguments.length === 0) {
+						throw 'invalid argument ';
+					}
+					if (arguments.length === 1) {
+						return _attr[key];
+					}
+					_attr[key] = value;
+				},
+				on : function (){
+				}
+				
+			};
+		}(setting ,jQuery, window);
+	});
 });

@@ -18,6 +18,7 @@
  */
 
 ;
+(function (){
 coconut.define('coconut.formatter', function(temp, data) {
 	return temp.replace(/\{([\w\.]*)\}/g, function(str, key) {
 		var keys = key.split("."), value = data[keys.shift()];
@@ -28,3 +29,4 @@ coconut.define('coconut.formatter', function(temp, data) {
 	});
 
 });
+})();

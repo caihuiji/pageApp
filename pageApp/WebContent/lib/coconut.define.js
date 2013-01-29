@@ -6,6 +6,8 @@
  * @param namespace - 全路径
  * @param clazz - 类 (function)  
  */
+(function (){
+	
 
 window.coconut = window.coconut || {};
 var NAMESPACE_SEPARTOR = '.';
@@ -25,7 +27,7 @@ coconut.define = function (namespace,clazz){
 			currrentNamespace = window;
 		for(var np in namespaces){
 			if ( !np.length ){
-				throw new Error ('namespace is illegal :'+ namespace) ;
+				throw 'namespace is illegal :'+ namespace ;
 			}
 			if(namespaces.length-1 == np){//the last one is class
 				break;
@@ -38,4 +40,4 @@ coconut.define = function (namespace,clazz){
 	return generateNamespace(namespace, clazz);
 	
 };
-
+})();

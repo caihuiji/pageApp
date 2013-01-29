@@ -12,6 +12,7 @@
  */
 
 ;
+(function (){
 coconut.define('coconut.override', function(dest, source) {
 	if (dest != null || source != null) {
 		for ( var k in dest) {
@@ -22,4 +23,5 @@ coconut.define('coconut.override', function(dest, source) {
 	}
 	return dest;
 });
+})();
 
