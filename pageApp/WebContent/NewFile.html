@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript" src="lib/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="lib/coconut.define.js"></script>
+	<script type="text/javascript" src="lib/coconut.formatter.js"></script>
+	<script type="text/javascript" src="lib/coconut.override.js"></script>
+	<script type="text/javascript" src="lib/coconut.event.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+var foo = function (){
+	return {
+		a:function (){
+			console.log(this.d);
+		},
+		b:function (){
+			console.log(this.d);
+		},
+		d: 11
+	}
+}
+
+var cc= new foo();
+
+</script>
+</body>
+</html>
