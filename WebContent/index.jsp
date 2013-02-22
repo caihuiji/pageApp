@@ -116,6 +116,25 @@
 	
 	var listView = new ListView();
 	listView.render();
+	
+	var TestRouter = Backbone.Router.extend({
+		routes :{
+			'alert/*path' :		'init',
+			'show/:number':		'show'
+		},
+		init : function (path){
+			alert('fuck ' + path);
+		},
+		show : function (number){
+			for(var i = 0 ; i <= number ; i++){
+				listView.addItem();
+			}
+		}
+	});
+	
+	new TestRouter();
+	Backbone.history.start();
+	
 })(jQuery);
 </script>
 
