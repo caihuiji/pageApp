@@ -6,7 +6,7 @@
  * @param namespace - 全路径
  * @param clazz - 类 (function)  
  */
-(function (){
+(function (window){
 	
 
 window.coconut = window.coconut || {};
@@ -40,4 +40,4 @@ coconut.define = function (namespace,clazz){
 	return generateNamespace(namespace, clazz);
 	
 };
-})();
+})(window);
